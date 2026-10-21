@@ -101,7 +101,7 @@ a { color: inherit; }
   <div class="wrap">
     <a class="brand" href="#top"><i aria-hidden="true"></i>Vision Zero BCN</a>
     <div class="navlinks">
-      <a href="#problem">Problem</a><a href="#insight">Insight</a><a href="#platform">Platform</a><a href="#owners">Who acts</a><a href="#learning">Learning loop</a><a href="#pilot">Pilot</a>
+      <a href="#problem">Problem</a><a href="#insight">Insight</a><a href="#platform">Platform</a><a href="#owners">Who acts</a><a href="#cases">Cases</a><a href="#learning">Learning loop</a><a href="#pilot">Pilot</a>
     </div>
     <a class="btn" href="demo/">▶ Live demo</a>
   </div>
@@ -214,32 +214,32 @@ a { color: inherit; }
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">A system that learns</p>
-      <h2>With the Guàrdia Urbana, every report makes the next proposal better</h2>
+      <h2>Every measure applied teaches the system which solutions work where</h2>
     </div>
     <div class="loop">
-      <div class="card"><h3>1 · New data</h3><p>Police crash reports, rider near-miss reports, fleet telemetry.</p></div>
-      <div class="card"><h3>2 · Retrain</h3><p>Models update; a new version replaces the old one only if it scores better on data it has never seen.</p></div>
-      <div class="card"><h3>3 · Propose</h3><p>Fresh recommendations, routed to each owner.</p></div>
-      <div class="card"><h3>4 · Measure</h3><p>Before–after results of each measure become evidence for the next round.</p></div>
+      <div class="card"><h3>1 · Propose</h3><p>A measure for each risk point, from the solutions catalogue.</p></div>
+      <div class="card"><h3>2 · Record</h3><p>Which measures the city actually carries out, and when.</p></div>
+      <div class="card"><h3>3 · Measure</h3><p>What happens afterwards, with new Guàrdia Urbana crash reports.</p></div>
+      <div class="card"><h3>4 · Learn</h3><p>The catalogue grows and the AI proposes new solutions by type of intersection.</p></div>
     </div>
-    <p class="lede" style="margin-top:24px">The knowledge base grows like a snowball: the longer it runs, the better it knows which measure works where.</p>
-    <p class="note">Near-miss capture and a space-time anomaly detector are built and tested on synthetic patterns; validating them with real riders is part of the pilot.</p>
+    <p class="lede" style="margin-top:24px">The knowledge base grows like a snowball: the longer it runs, the better it knows which measure works at which kind of intersection.</p>
+    <p class="note">Rider near-miss reports and fleet telemetry are a second input. The capture form and the anomaly detector are built; validating them with real riders is part of the pilot.</p>
   </div>
 </section>
 
-<section id="twin">
-  <div class="wrap two">
-    <div style="display:grid;gap:14px">
-      <p class="eyebrow">Digital twin</p>
-      <h2>At black spots, test the fix before spending on the street</h2>
-      <p class="lede">Engineers combine measures on a digital twin of each critical intersection and see the estimated effect and cost before any works.</p>
-      <p><a class="btn" href="demo/">▶ Try the live demo</a></p>
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Real cases</p>
+      <h2>Four Barcelona intersections have had more than 100 motorcycle crashes since 2015</h2>
+      <p class="lede">41 have had 50 or more. For each one the tool produces a sheet with the concrete measure, the evidence behind it and the department responsible.</p>
     </div>
-    <div style="display:grid;gap:10px">
-      <span class="twin-num">−25%</span>
-      <p><b>median estimated reduction</b> in killed or seriously injured riders per treated intersection (range 13–40% across the 44 critical intersections).</p>
-      <p class="note">Effects come from published crash modification factors and are working hypotheses to be calibrated in the pilot. Only one of the 44 intersections reaches 40%.</p>
+    <div class="grid3">
+      <div class="card"><h3>Carrer París</h3><p>121 crashes. Side collisions with cars: 55% of crashes here vs 36% city-wide.</p><p><b style="color:var(--signal)">Measure:</b> move containers and loading bays at least 10 m from the corner to restore visibility.</p></div>
+      <div class="card"><h3>Diagonal / Numància</h3><p>Front-side collisions: 34% vs 18% city-wide, almost double.</p><p><b style="color:var(--signal)">Measure:</b> review signal phases and protect the turn that cuts across riders’ path.</p></div>
+      <div class="card"><h3>Where riders fall</h3><p>Where single-vehicle falls are above the city average.</p><p><b style="color:var(--signal)">Measure:</b> anti-skid road markings, SRT ≥ 65, in braking and leaning zones.</p></div>
     </div>
+    <p style="margin-top:24px"><a class="btn" href="demo/">▶ See the sheets in the live demo</a></p>
   </div>
 </section>
 
@@ -267,7 +267,7 @@ a { color: inherit; }
     <div class="grid3">
       <div class="card"><h3>Diagnose</h3><p>Priority black spots and network-wide patterns, each routed to its owner.</p></div>
       <div class="card"><h3>Learn</h3><p>A data loop with the Guàrdia Urbana, plus near-miss reports from riders and fleets.</p></div>
-      <div class="card"><h3>Measure</h3><p>Independent before–after evaluation of KSI and crashes against untreated control sites.</p></div>
+      <div class="card"><h3>Measure</h3><p>Record what is applied and what happens next, so the system learns.</p></div>
     </div>
     <p style="margin-top:28px;font-size:1.1rem">We are looking for a city partner, pilot funding and mentoring on public procurement.</p>
     <p style="margin-top:20px"><a class="btn" href="mailto:[email]">Contact us</a></p>

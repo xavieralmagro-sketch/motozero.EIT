@@ -312,7 +312,7 @@ input[type="range"] { width: 100%; accent-color: var(--data); }
       </form>
     </section>
     <section class="impact num" aria-label="Impact indicators">
-      <div><b style="color:var(--ok)">−25%</b><span>killed or seriously injured riders at each critical intersection with the full package of measures (twin median; up to −40%)</span></div>
+      <div><b style="color:var(--ok)">4</b><span>intersections with more than 100 motorcycle crashes since 2015, and 41 with 50 or more</span></div>
       <div><b>82%</b><span>of rider deaths happen outside the 382 black spots: we also target network-wide patterns</span></div>
       <div><b style="color:var(--risk)" id="pub-morts"></b><span id="pub-morts-l"></span></div>
       <div><b id="pub-acc"></b><span>motorcycle crashes analysed (Guàrdia Urbana, Open Data BCN)</span></div>
@@ -961,7 +961,7 @@ function reportMd() {
     const rs = recsFor(a); rs.forEach(r => { const l = recLine(a, r); md += `- **${l.head}.** ${l.body} ${l.ev}\n`; }); if (!rs.length) md += '- No pattern exceeds the automatic threshold. Site visit.\n';
     md += '\nFollow-up: [ ] Inspected  [ ] Approved  [ ] Implemented  [ ] 12-month evaluation\n'; });
   prev.forEach(p => { const R = prevRule(p); md += `\n## Preventive alert ${p.id}\n\n${p.lat.toFixed(5)}, ${p.lon.toFixed(5)} · ${p.near.length} near-misses, no history of serious crashes.\n\n- **${R.codi} · ${R.titol}.** ${R.accio} Owner: ${R.area}. Site inspection within 30 days.\n`; });
-  md += `\n## Method\n\nBlack spots: haversine DBSCAN (20 m, at least 20 crashes). Alert level: history (deaths, serious injuries, relative KSI risk) raised by near-misses (≥3 within 60 m: +1; ≥6: +2). A measure is recommended when its pattern is at least 1.5 times more frequent than city-wide. The expected effect (twin median −25% KSI per treated site) is evaluated with difference-in-differences against control intersections.\n`;
+  md += `\n## Method\n\nBlack spots: haversine DBSCAN (20 m, at least 20 crashes). Alert level: history (deaths, serious injuries, relative KSI risk) raised by near-misses (≥3 within 60 m: +1; ≥6: +2). A measure is recommended when its pattern is at least 1.5 times more frequent than city-wide. Each measure applied is recorded and its effect measured with new crash reports, so the system learns which solutions work at each type of intersection.\n`;
   return md;
 }
 function reportPdf() {
@@ -991,7 +991,7 @@ function reportPdf() {
     text('Follow-up:  [  ] Inspected   [  ] Approved   [  ] Implemented   [  ] 12-month evaluation', 8.3, 'normal', 4); });
   prev.forEach(p => { const R = prevRule(p); need(24); text(`Preventive alert ${p.id}`, 12.5, 'bold', 1.2); text(`${p.lat.toFixed(5)}, ${p.lon.toFixed(5)} · ${p.near.length} near-misses · no history of serious crashes`, 8.5, 'normal', 2); text(`${R.codi} · ${R.titol}`, 9.5, 'bold', 1); text(R.accio + ' Site inspection within 30 days. Owner: ' + R.area + '.', 9, 'normal', 4); });
   text('Method', 11, 'bold', 1.5);
-  text('Black spots: haversine DBSCAN (20 m, at least 20 crashes) over Guàrdia Urbana motorcycle and moped crashes. Alert level: history raised by near-misses (>=3 within 60 m: +1 level; >=6: +2). A measure is recommended when its pattern is at least 1.5 times more frequent than city-wide. Expected effect: twin median -25% KSI per treated site, evaluated with difference-in-differences against control intersections. Recommendations require validation by a city engineer.', 8.5);
+  text('Black spots: haversine DBSCAN (20 m, at least 20 crashes) over Guàrdia Urbana motorcycle and moped crashes. Alert level: history raised by near-misses (>=3 within 60 m: +1 level; >=6: +2). A measure is recommended when its pattern is at least 1.5 times more frequent than city-wide. Each measure applied is recorded and its effect measured with new crash reports, so the system learns which solutions work at each type of intersection. Recommendations require validation by a city engineer.', 8.5);
   foot(); return doc.output('arraybuffer');
 }
 const fname = ext => `vz-bcn-${$('#inf-scope').value}-${new Date().toISOString().slice(0, 10)}.${ext}`;

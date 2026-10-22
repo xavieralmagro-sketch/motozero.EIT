@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Vision Zero BCN</title>
-<meta name="description" content="Data-driven road safety for motorcyclists in Barcelona: we analyse every crash, propose solutions, route each one to whoever can act, and keep learning.">
+<meta name="description" content="Road safety for motorcyclists in Barcelona: for every crash pattern, the tool proposes a concrete measure and who should carry it out, and keeps learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap">
@@ -49,6 +49,14 @@ nav .btn { margin-left: auto; padding: 8px 14px; font-size: .85rem; }
 .hero .eyebrow { color: #F2B134; }
 .hero .lede { color: #C9CED6; max-width: 760px; font-size: 1.2rem; margin-top: 18px; }
 .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.hero .tagline { font-family: var(--f-display); font-size: clamp(1.5rem, 3.6vw, 2.4rem); line-height: 1.15; margin-top: 22px; max-width: 900px; }
+.hero .tagline b { color: #F2B134; font-weight: inherit; }
+.hero .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; max-width: 980px; }
+.hero .flow div { background: #1A1F27; border: 1px solid #2C333D; border-radius: 10px; padding: 14px 16px; position: relative; }
+.hero .flow span { font-size: .78rem; letter-spacing: 1.2px; text-transform: uppercase; color: #F2B134; font-weight: 700; }
+.hero .flow p { margin: 6px 0 0; color: #E3E6EA; font-size: .98rem; }
+.hero .flow div:last-child { border-color: #F2B134; }
+@media (max-width: 720px) { .hero .flow { grid-template-columns: 1fr; } }
 .hero .btn.ghost { color: #F4F2EC; border-color: #4A525E; }
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
 .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 6px; align-content: start; }
@@ -111,7 +119,13 @@ a { color: inherit; }
   <div class="wrap">
     <p class="eyebrow">Road safety for motorcyclists · Barcelona</p>
     <h1 style="margin-top:14px">Vision Zero BCN</h1>
-    <p class="lede">Fewer motorcyclists killed or injured in Barcelona. We analyse every crash in the city’s open data, propose solutions, send each one to whoever can act on it, and learn from every new report.</p>
+    <p class="tagline">Not just where crashes happen: <b>what to do</b> about each one, and <b>who should do it</b>.</p>
+    <p class="lede">For every problem spot or pattern in Barcelona’s motorcycle crash data, the tool proposes a concrete measure and assigns it to the body responsible for carrying it out: city mobility and public works, the Guàrdia Urbana, transport fleets or rider associations. Then it learns from what happens next.</p>
+    <div class="flow" aria-label="Example: Carrer París">
+      <div><span>Problem</span><p>Carrer París · 121 crashes, 55% side collisions with cars (36% city-wide)</p></div>
+      <div><span>Solution</span><p>Move containers and loading bays 10 m from the corner to restore visibility</p></div>
+      <div><span>Who acts</span><p>City mobility and public works, as a work order</p></div>
+    </div>
     <div class="cta">
       <a class="btn" href="demo/">▶ Open the digital twin demo</a>
       <a class="btn ghost" href="#platform">How it works</a>
